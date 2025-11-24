@@ -4,3 +4,6 @@ venv/
 
 # Playwright / browser persistent data
 browser_data/
+
+# Python
+__pycache__/
