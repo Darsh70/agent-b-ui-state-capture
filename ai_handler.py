@@ -25,8 +25,7 @@ class AIHandler:
         
         INSTRUCTIONS:
         1. If a modal just opened, the input might already be focused. You can use action="type" with element_id=null.
-        2. If you see [INPUT FIELD] in the list, that is a typable area.
-        3. To save/create, usually press Enter after typing, or click the primary button.
+        2. To save/create, usually press Enter after typing, or click the primary button.
         """
         
         response = self.client.models.generate_content(
