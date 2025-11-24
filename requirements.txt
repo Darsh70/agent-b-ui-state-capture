@@ -1,5 +1,0 @@
-playwright
-python-dotenv
-pydantic
-pillow
-google-genai
