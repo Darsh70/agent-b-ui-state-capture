@@ -1,0 +1,6 @@
+# Virtual Environment
+venv/
+.env
+
+# Playwright / browser persistent data
+browser_data/
