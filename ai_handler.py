@@ -22,6 +22,11 @@ class AIHandler:
         
         ELEMENTS:
         {dom_text}
+
+        CRITICAL INSTRUCTIONS FOR TYPING:
+        1. **VISUAL FOCUS CHECK**: Look closely at the screenshot. Is the field you want to type into already highlighted (dark border), or does it have a blinking cursor?
+        2. **BLIND TYPING PRIORITY**: If the correct element is ALREADY focused, DO NOT CLICK IT again. Clicking might reset focus or select the wrong parent container.
+           - INSTEAD: Use action="type" with element_id=null. This types directly into the active window.
         
         INSTRUCTIONS:
         1. If a modal just opened, the input might already be focused. You can use action="type" with element_id=null.
