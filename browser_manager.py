@@ -27,8 +27,15 @@ class BrowserManager:
         if self.playwright: self.playwright.stop()
 
     def navigate(self, url: str):
-        self.page.goto(url)
-        time.sleep(3)
+        try:
+            if not url.startswith("http"):
+                url = "https://" + url
+            self.page.goto(url)
+            time.sleep(3)
+            return True
+        except Exception as e:
+            print(f"Error navigating to {url}: {e}")
+            return False
 
     def capture_screenshot(self, path):
         self.page.wait_for_load_state("domcontentloaded")
@@ -46,7 +53,15 @@ class BrowserManager:
         except Exception as e:
             return f"Error: {e}"
 
-    def execute_action(self, element_id: Optional[int], action_type: str, input_text: str = "") -> bool:
+    def execute_action(self, element_id: Optional[int], action_type: str, input_text: str = "", url: str = "") -> bool:
+        
+        # Navigation
+        if action_type == "navigate":
+            if url:
+                print(f"Navigating to: {url}")
+                return self.navigate(url)
+            return False
+
         # Blind Type
         if action_type == "type" and element_id is None:
             print(f"Blind Typing: '{input_text}'")
@@ -69,8 +84,13 @@ class BrowserManager:
         
         try:
             if action_type == "type":
+                # Click once to focus
                 self.page.mouse.click(x, y)
-                self.page.keyboard.press("Meta+A")
+                time.sleep(0.1)
+                
+                # Triple click to select the text inside the field
+                self.page.mouse.click(x, y, click_count=3) 
+                
                 self.page.keyboard.press("Backspace")
                 self.page.keyboard.type(input_text)
                 self.page.keyboard.press("Enter")
@@ -78,10 +98,13 @@ class BrowserManager:
             elif action_type == "click":
                 self.page.mouse.click(x, y)
                 return True
-        except:
+        except Exception as e:
+            print(f"Interaction failed: {e}")
             return False
+        
+        return False
             
     def get_element_label(self, element_id: Optional[int]) -> str:
         if element_id is not None and element_id in self.element_map:
             return self.element_map[element_id].get('text', 'Unknown')
-        return "Blind_Input"
+        return "Blind_Action"
