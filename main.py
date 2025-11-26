@@ -23,6 +23,7 @@ def run_task(task_name, goal, start_url):
     try:
         browser.start()
         browser.navigate(start_url)
+        #time.sleep(10)
         
         history = []
         
@@ -67,15 +68,20 @@ def run_task(task_name, goal, start_url):
                 print("Task Finished.")
                 break
                 
-            time.sleep(2)
+            time.sleep(5)
             
     finally:
         browser.stop()
 
 if __name__ == "__main__":
-    # time.sleep(20)
     run_task(
-        task_name="google_sheet_delete_project", 
-        goal="Delete google sheets project titled SoftLight", 
-        start_url="https://docs.google.com/spreadsheets" 
+        task_name="linear_new_project", 
+        goal="How do I create a new project named Agent?", 
+        start_url="https://linear.app" 
+    )
+    
+    run_task(
+        task_name="notion_filter_by_done", 
+        goal="How do I filter To Do list by Done?", 
+        start_url="https://notion.so" 
     )
