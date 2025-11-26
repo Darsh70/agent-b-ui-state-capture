@@ -35,9 +35,8 @@ class AIHandler:
            - INSTEAD: Use action="type" with element_id=null. This types directly into the active window.
         
         INSTRUCTIONS:
-        1. If you just completed the user's goal 
-        2. If a modal just opened, the input might already be focused. You can use action="type" with element_id=null.
-        3. To save/create, usually press Enter after typing, or click the primary button.
+        1. If a modal just opened, the input might already be focused. You can use action="type" with element_id=null.
+        2. To save/create, usually press Enter after typing, or click the primary button.
         """
         
         response = self.client.models.generate_content(
