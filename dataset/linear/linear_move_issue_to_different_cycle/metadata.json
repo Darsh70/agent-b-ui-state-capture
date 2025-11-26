@@ -1,0 +1,38 @@
+[
+  {
+    "reasoning": "To move an issue, I need to first select an issue to view its details. I will click on 'DAR-6 New issue title Nov 25' to open the issue details.",
+    "action": "click",
+    "element_id": 35,
+    "input_text": "",
+    "url": "",
+    "screenshot_file": "step_01.png",
+    "step_number": 1
+  },
+  {
+    "reasoning": "The goal is to move an issue to a different cycle. I am currently on the issue details page. On the right sidebar, I see an option \"Add to cycle\" under the \"Cycle\" section. Clicking this should allow me to add the issue to a cycle, which is how I would move it. I need to click on 'Add to cycle'.",
+    "action": "click",
+    "element_id": 51,
+    "input_text": "",
+    "url": "",
+    "screenshot_file": "step_02.png",
+    "step_number": 2
+  },
+  {
+    "reasoning": "I have opened the issue and clicked 'Add to cycle'. Now, to move the issue to a different cycle, I need to select one of the available cycles from the list. I will choose 'Cycle 1 Dec 1 - Dec 14'.",
+    "action": "click",
+    "element_id": 55,
+    "input_text": "",
+    "url": "",
+    "screenshot_file": "step_03.png",
+    "step_number": 3
+  },
+  {
+    "reasoning": "The history shows that I clicked on a cycle ('Cycle 1 Dec 1 - Dec 14'). The current screen shows the issue is in 'Cycle 1'. This indicates that the action of moving the issue to a cycle has been performed. Therefore, the goal is achieved.",
+    "action": "finish",
+    "element_id": null,
+    "input_text": "",
+    "url": "",
+    "screenshot_file": "step_04.png",
+    "step_number": 4
+  }
+]

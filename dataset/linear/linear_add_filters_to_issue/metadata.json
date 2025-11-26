@@ -1,0 +1,56 @@
+[
+  {
+    "reasoning": "To understand how to add filterable elements to an issue, I first need to open an issue to inspect its details and available options. I will click on 'DAR-6 New issue title' to open it.",
+    "action": "click",
+    "element_id": 35,
+    "input_text": "",
+    "url": "",
+    "screenshot_file": "step_01.png",
+    "step_number": 1
+  },
+  {
+    "reasoning": "To add filterable elements, I need to look at the right sidebar for options like 'Add label' and 'Add to project'. I will start by clicking 'Add label'.",
+    "action": "click",
+    "element_id": 53,
+    "input_text": null,
+    "url": null,
+    "screenshot_file": "step_02.png",
+    "step_number": 2
+  },
+  {
+    "reasoning": "I have clicked on 'Add label' and now I see a list of labels. To add multiple filterable elements, I need to select the labels one by one. I will start by clicking on 'Bug'.",
+    "action": "click",
+    "element_id": 58,
+    "input_text": "",
+    "url": "",
+    "screenshot_file": "step_03.png",
+    "step_number": 3
+  },
+  {
+    "reasoning": "The goal is to add multiple filterable elements. I have already added one label ('Bug') and one cycle ('Cycle 1'). To add another filterable element, I will click 'Add label' again to add another label, or 'Add to project' to add a project. I will choose to add another label by clicking the 'Add label' button.",
+    "action": "click",
+    "element_id": 56,
+    "input_text": "",
+    "url": "",
+    "screenshot_file": "step_04.png",
+    "step_number": 4
+  },
+  {
+    "reasoning": "I need to add multiple labels to the issue. I have already added 'Bug'. Now I will add 'Feature' by clicking on it.",
+    "action": "click",
+    "element_id": 63,
+    "input_text": "",
+    "url": "",
+    "screenshot_file": "step_05.png",
+    "step_number": 5
+  },
+  {
+    "reasoning": "I have successfully added two labels, 'Bug' and 'Feature', which are multiple filterable elements to the issue. This answers the 'how-to' question posed by the user.",
+    "action": "finish",
+    "element_id": null,
+    "input_text": "",
+    "url": "",
+    "screenshot_file": "step_06.png",
+    "step_number": 6
+  }
+]
