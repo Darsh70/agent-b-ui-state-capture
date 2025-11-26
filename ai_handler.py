@@ -18,10 +18,16 @@ class AIHandler:
         image = Image.open(screenshot_path)
         prompt = f"""
         GOAL: {goal}
-        HISTORY: {json.dumps(history[-3:])}
+        HISTORY: {json.dumps(history)}
         
         ELEMENTS:
         {dom_text}
+
+        COMPLETION CHECK (CRITICAL):
+        1. Look at the HISTORY and the SCREENSHOT. Did you just complete a task that is the final step in the goal?
+        2. If yes, assume the task is COMPLETE.
+        3. Output "action": "finish".
+        4. DO NOT repeat the same action twice.
 
         CRITICAL INSTRUCTIONS FOR TYPING:
         1. **VISUAL FOCUS CHECK**: Look closely at the screenshot. Is the field you want to type into already highlighted (dark border), or does it have a blinking cursor?
@@ -29,8 +35,9 @@ class AIHandler:
            - INSTEAD: Use action="type" with element_id=null. This types directly into the active window.
         
         INSTRUCTIONS:
-        1. If a modal just opened, the input might already be focused. You can use action="type" with element_id=null.
-        2. To save/create, usually press Enter after typing, or click the primary button.
+        1. If you just completed the user's goal 
+        2. If a modal just opened, the input might already be focused. You can use action="type" with element_id=null.
+        3. To save/create, usually press Enter after typing, or click the primary button.
         """
         
         response = self.client.models.generate_content(
